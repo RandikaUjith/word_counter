@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <style>
+        .text-box {
+            width: 300px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-div">
+        <input type="text" class="text-box" id="text_box">
+    </div>
+    <div class="resul-div">
+        Number of words <span id="number">0</span>
+    </div>
+    
+
+    <script>
+        let number = 0;
+        const endCharArray = [' ', '.'];
+        let lastChar = ' ';
+        const textBox = document.getElementById('text_box');
+        textBox.addEventListener('keyup', function(e) {  
+            if(endCharArray.includes(e.key)) {
+                if (endCharArray.includes(lastChar)) {
+                    
+                }else {
+                    number++;
+                    console.log(e.key);
+                    console.log(lastChar);
+                }
+            }
+            
+            lastChar = e.key;
+            document.getElementById('number').innerHTML = number;
+        });
+
+    </script>
+</body>
+</html>
